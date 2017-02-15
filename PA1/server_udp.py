@@ -16,11 +16,10 @@ sock.bind(server_address)
 while True:
 	print >>sys.stderr, '\nWaiting to receive message...'
 	data, address = sock.recvfrom(4096)
-	if data == "time":
-		rec_time = time.time()
+	# if data == "time":
+	rec_time = time.time()
 
 	print >>sys.stderr, 'Received %s bytes from %s' % (len(data), address)
-	print >>sys.stderr, data
 	print >>sys.stderr, 'Message receive time %f' % rec_time
 
 	if data:
